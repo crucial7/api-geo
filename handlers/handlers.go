@@ -23,11 +23,7 @@ type HTMLError struct {
 
 func LatLongByAddress(w http.ResponseWriter, req *http.Request) {
 
-	client, err := maps.NewClient(maps.WithAPIKey("AIzaSyBKJ5hORqnuHg33bzcB7AyZBDr7jKzhwsc"))
-	if err != nil {
-
-		log.Fatalf("fatal error: %s", err)
-	}
+	client, _ := maps.NewClient(maps.WithAPIKey("AIzaSyBKJ5hORqnuHg33bzcB7AyZBDr7jKzhwsc"))
 
 	r := &maps.GeocodingRequest{
 		Address: req.URL.Path[len("/latlongByAddress/"):],
@@ -37,14 +33,21 @@ func LatLongByAddress(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	if err != nil && !strings.Contains(err.Error(), "ZERO_RESULTS") {
 
-		log.Fatalf("fatal error: %s", err)
+		w.WriteHeader(http.StatusBadRequest)
+		errResult := &HTMLError{
+			Err:  err.Error(),
+			Code: http.StatusBadRequest,
+		}
+		json.NewEncoder(w).Encode(errResult)
+		log.Println("WARN: fatal error: %s", err)
 	} else {
 
 		if err != nil && strings.Contains(err.Error(), "ZERO_RESULTS") {
 
+			w.WriteHeader(http.StatusBadRequest)
 			errResult := &HTMLError{
 				Err:  err.Error(),
-				Code: 500,
+				Code: http.StatusBadRequest,
 			}
 			json.NewEncoder(w).Encode(errResult)
 		} else {
