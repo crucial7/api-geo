@@ -10,7 +10,7 @@ import (
 	httpmock "gopkg.in/jarcoal/httpmock.v1"
 )
 
-func TestHealthCheckHandler(t *testing.T) {
+func TestWeatherByLatLongAndDateHandler(t *testing.T) {
 
 	httpmock.Activate()
 	defer httpmock.DeactivateAndReset()
