@@ -1,0 +1,13 @@
+hash: 97d7018a40ddca293700611327c6b3a9d7a9fdf9500149128723157773b15124
+updated: 2017-06-24T10:37:14.455067785-04:00
+imports:
+- name: golang.org/x/net
+  version: 5f8847ae0d0e90b6a9dc8148e7ad616874625171
+  subpackages:
+  - context
+  - context/ctxhttp
+- name: googlemaps.github.io/maps
+  version: 4205f7da300fcef876edfecec7e78f9cd0f19742
+- name: googlemaps.github.io/maps/internal
+  version: 4205f7da300fcef876edfecec7e78f9cd0f19742
+devImports: []

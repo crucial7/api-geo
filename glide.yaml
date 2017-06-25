@@ -1,0 +1,6 @@
+package: github.com/crucial7/api-geo
+import:
+- package: googlemaps.github.io/maps
+- package: golang.org/x/net
+  subpackages:
+  - context
