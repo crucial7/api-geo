@@ -32,7 +32,7 @@ spec:
         imagePullPolicy: IfNotPresent
         name: api-geo
         ports:
-        - containerPort: 80
+        - containerPort: 3001
       dnsPolicy: ClusterFirst
       imagePullSecrets:
       - name: quayregistrykey
