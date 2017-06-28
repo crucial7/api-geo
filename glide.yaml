@@ -1,7 +1,46 @@
 package: github.com/crucial7/api-geo
 import:
-- package: googlemaps.github.io/maps
+- package: github.com/kr/pretty
+- package: go4.org
+  subpackages:
+  - syncutil/singleflight
+- package: golang.org/x/crypto
+  subpackages:
+  - acme/autocert
+  - ssh/terminal
 - package: golang.org/x/net
   subpackages:
+  - bpf
   - context
+  - context/ctxhttp
+  - html
+  - html/atom
+  - http2
+  - http2/hpack
+  - idna
+  - internal/iana
+  - internal/socket
+  - internal/timeseries
+  - ipv4
+  - ipv6
+  - lex/httplex
+  - webdav/internal/xml
+- package: golang.org/x/oauth2
+  subpackages:
+  - google
+- package: golang.org/x/text
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/htmlindex
+  - secure/bidirule
+  - transform
+  - unicode/norm
+- package: google.golang.org/api
+  subpackages:
+  - compute/v1
+- package: googlemaps.github.io/maps
+  subpackages:
+  - internal
+testImport:
 - package: gopkg.in/jarcoal/httpmock.v1

@@ -7,3 +7,18 @@ pipeline:
     when:
         branch: master
         event: push
+
+  stage-deploy:
+      image: vallard/drone-kube
+      template: deployment.yaml
+      namespace: stage
+      when:
+          branch: master
+          event: push
+
+  prod-deploy:
+      image: vallard/drone-kube
+      template: deployment.yaml
+      when:
+          branch: refs/tags/*
+          event: tag

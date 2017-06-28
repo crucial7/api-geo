@@ -1,13 +1,56 @@
-hash: 97d7018a40ddca293700611327c6b3a9d7a9fdf9500149128723157773b15124
-updated: 2017-06-24T10:37:14.455067785-04:00
+hash: 8c183381d39c68ff468a270c0a7f4fc47a8678eafb154c9c4999ca260b28c402
+updated: 2017-06-28T07:32:06.926231252-04:00
 imports:
-- name: golang.org/x/net
-  version: 5f8847ae0d0e90b6a9dc8148e7ad616874625171
+- name: github.com/kr/pretty
+  version: cfb55aafdaf3ec08f0db22699ab822c50091b1c4
+- name: go4.org
+  version: 034d17a462f7b2dcd1a4a73553ec5357ff6e6c6e
   subpackages:
+  - syncutil/singleflight
+- name: golang.org/x/crypto
+  version: adbae1b6b6fb4b02448a0fc0dbbc9ba2b95b294d
+  subpackages:
+  - acme/autocert
+  - ssh/terminal
+- name: golang.org/x/net
+  version: 8663ed5da4fd087c3cfb99a996e628b72e2f0948
+  subpackages:
+  - bpf
   - context
   - context/ctxhttp
+  - html
+  - html/atom
+  - http2
+  - http2/hpack
+  - idna
+  - internal/iana
+  - internal/socket
+  - internal/timeseries
+  - ipv4
+  - ipv6
+  - lex/httplex
+  - webdav/internal/xml
+- name: golang.org/x/oauth2
+  version: f047394b6d14284165300fd82dad67edb3a4d7f6
+  subpackages:
+  - google
+- name: golang.org/x/text
+  version: 6353ef0f924300eea566d3438817aa4d3374817e
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/htmlindex
+  - secure/bidirule
+  - transform
+  - unicode/norm
+- name: google.golang.org/api
+  version: e6586c9293b9d514c7f5d5076731ec977cff1be6
+  subpackages:
+  - compute/v1
 - name: googlemaps.github.io/maps
   version: 4205f7da300fcef876edfecec7e78f9cd0f19742
-- name: googlemaps.github.io/maps/internal
-  version: 4205f7da300fcef876edfecec7e78f9cd0f19742
-devImports: []
+  subpackages:
+  - internal
+testImports:
+- name: gopkg.in/jarcoal/httpmock.v1
+  version: cf52904a3cf0f78f199ecade6a6df8e245d5b25a

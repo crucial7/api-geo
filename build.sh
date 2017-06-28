@@ -1,4 +1,4 @@
 #!/bin/sh
 
+glide install &&
 go build index.go
-./index
