@@ -8,6 +8,17 @@ pipeline:
         branch: master
         event: push
 
+  docker-build-push-prod:
+    image: plugins/docker
+    repo: sheriff/api-geo
+    tags:
+        - latest
+        - 1.0.${DRONE_BUILD_NUMBER}
+    secrets: [ docker_email, docker_password ]
+    when:
+          branch: refs/tags/*
+          event: tag
+
   stage-deploy:
       image: vallard/drone-kube
       template: deployment.yaml
