@@ -1,0 +1,9 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: sheriff/api-geo
+    tags: 1.0.${DRONE_BUILD_NUMBER}
+    secrets: [ docker_username, docker_password ]
+    when:
+        branch: master
+        event: push
