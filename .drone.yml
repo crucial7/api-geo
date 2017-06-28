@@ -1,5 +1,5 @@
 pipeline:
-  docker:
+  docker-build-push:
     image: plugins/docker
     repo: sheriff/api-geo
     tags: 1.0.${DRONE_BUILD_NUMBER}
